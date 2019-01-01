@@ -11,8 +11,6 @@ import com.zsz.tools.VerifyCodeUtils;
 public class UserDAO {
 	public long addnew(String phoneNum, String password) {
 		
-		
-		
 		// 生成一个盐
 		String salt = VerifyCodeUtils.generateVerifyCode(6, "abcdefg1234567@!$%&*");
 		String md5 = CommonUtils.calcMD5(password + salt);//用户输入的密码+盐 ，计算md5值

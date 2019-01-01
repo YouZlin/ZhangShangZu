@@ -3,6 +3,8 @@
 	<name>ZuAdmin</name>
 	<comment></comment>
 	<projects>
+		<project>ZSZService</project>
+		<project>ZSZTools</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

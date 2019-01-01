@@ -5,40 +5,40 @@ import java.util.Date;
 public class HouseDTO
 {
 	private long id;
-	private long cityId;// ����id
+	private long cityId;// 城市id
 	private String cityName;
-	private long regionId;// ����id
-	private String regionName;// ��������
-	private long communityId;// С��id
-	private String communityName;// С������
-	private String communityLocation;// С��λ��
-	private String communityTraffic;// С����ͨ
-	private Integer communityBuiltYear;// С���������
+	private long regionId;// 区域id
+	private String regionName;// 区域名字
+	private long communityId;// 小区id
+	private String communityName;// 小区名字
+	private String communityLocation;// 小区位置
+	private String communityTraffic;// 小区交通
+	private Integer communityBuiltYear;// 小区建造时间
 
-	private long roomTypeId;// ���ݻ���id������һ����
-	private String roomTypeName;// ���ݻ�������
-	private String address;// ��ַ
-	private int monthRent;// �����
-	private long statusId;// ״̬�������У��Ѿ������
-	private String statusName;// ״̬����
-	private double area;// ���
-	private long decorateStatusId;// װ��״̬����װ����װ
-	private String decorateStatusName;// װ��״̬����
-	private int totalFloorCount;// ��¥��
-	private int floorIndex;// ��������¥��
-	private long typeId;// �������ͣ� ���� д��¥ ���� ����
-	private String typeName;// ������������
-	private String direction;// ����
-	private Date lookableDateTime;// ���Կ�����ʱ��
-	private Date checkInDateTime;// ������ס��ʱ��
+	private long roomTypeId;// 房间类型id,不允许为空
+	private String roomTypeName;// 房间类型
+	private String address;// 地址ַ
+	private int monthRent;// 月租
+	private long statusId;// 状态id
+	private String statusName;//状态名称
+	private double area;//大小
+	private long decorateStatusId;// 装饰状态id
+	private String decorateStatusName;// 装饰名称
+	private int totalFloorCount;// 楼层数
+	private int floorIndex;// 楼层位置
+	private long typeId;// 类型id
+	private String typeName;// 类型名称
+	private String direction;// 朝向
+	private Date lookableDateTime;// 看房时间
+	private Date checkInDateTime;// 入住时间
 
-	private String ownerName;// ��������
-	private String ownerPhoneNum;// �����绰
-	private String description;// ��Դ����
-	private Date createDateTime;// ��¼ʱ��
-	private boolean isDeleted;// �Ƿ���ɾ��
-	private long[] attachmentIds;// ������ʩid
-	private String firstThumbUrl;// ��һ������ͼurl
+	private String ownerName;// 所有者名字
+	private String ownerPhoneNum;// 所有者电话号码
+	private String description;// 描述
+	private Date createDateTime;// 创建时间
+	private boolean isDeleted;// 是否被删除
+	private long[] attachmentIds;// 家具id
+	private String firstThumbUrl;// 首页url
 
 	public long getId()
 	{

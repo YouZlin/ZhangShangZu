@@ -74,7 +74,7 @@ public class HouseDAOTest {
 		opt.setCurrentIndex(1);
 		//opt.setEndMonthRent(8000);
 		opt.setKeywords("村");
-		opt.setOrderByType(OrderByType.MonthRent);
+		opt.setOrderByType(OrderByType.MonthRent_ASC);
 		opt.setPageSize(10);
 		opt.setRegionId(24L);
 		opt.setStartMonthRent(500);

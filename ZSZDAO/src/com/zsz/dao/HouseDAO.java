@@ -341,11 +341,15 @@ public class HouseDAO {
 			listParams.add(options.getTypeId());
 		}
 
-		// todo:可以让用户选择“面积从大到小、面积从小到大、租金从大到小、租金从小到大”
-		if (options.getOrderByType() == OrderByType.Area) {
+		//可以让用户选择“面积从大到小、面积从小到大、租金从大到小、租金从小到大”
+		if (options.getOrderByType() == OrderByType.Area_ASC) {
 			sbSelect.append("order by h.Area ASC\n");
-		} else if (options.getOrderByType() == OrderByType.MonthRent) {
+		} else if (options.getOrderByType() == OrderByType.Area_DESC) {
+			sbSelect.append("order by h.Area DESC\n");
+		} else if (options.getOrderByType() == OrderByType.MonthRent_ASC) {
 			sbSelect.append("order by h.MonthRent ASC\n");
+		} else if (options.getOrderByType() == OrderByType.MonthRent_DESC) {
+			sbSelect.append("order by h.MonthRent DESC\n");
 		}
 		
 		//查询满足条件的数据的条数
@@ -412,11 +416,15 @@ public class HouseDAO {
 			listParams.add(options.getTypeId());
 		}
 
-		// todo:可以让用户选择“面积从大到小、面积从小到大、租金从大到小、租金从小到大”
-		if (options.getOrderByType() == OrderByType.Area) {
+		//可以让用户选择“面积从大到小、面积从小到大、租金从大到小、租金从小到大”
+		if (options.getOrderByType() == OrderByType.Area_ASC) {
 			sbSelect.append("order by h.Area ASC\n");
-		} else if (options.getOrderByType() == OrderByType.MonthRent) {
+		} else if (options.getOrderByType() == OrderByType.Area_DESC) {
+			sbSelect.append("order by h.Area DESC\n");
+		} else if (options.getOrderByType() == OrderByType.MonthRent_ASC) {
 			sbSelect.append("order by h.MonthRent ASC\n");
+		} else if (options.getOrderByType() == OrderByType.MonthRent_DESC) {
+			sbSelect.append("order by h.MonthRent DESC\n");
 		}
 		sbSelect.append("limit ?,?\n");
 		listParams.add((options.getCurrentIndex() - 1) * options.getPageSize());
