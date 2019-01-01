@@ -11,8 +11,7 @@ import com.zsz.dto.CommunityDTO;
 public class CommunityDAO
 {
 	/**
-	 * ��ȡ���µ�С��
-	 * 
+	 * 获得区域下的所有小区
 	 * @param regionId
 	 * @return
 	 */
