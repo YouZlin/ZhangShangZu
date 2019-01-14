@@ -1,5 +1,6 @@
 package com.zsz.dao.utils;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -136,14 +137,6 @@ public class JDBCUtils {
 		}
 	}
 
-	/**
-	 * 执行插入语句,获得插入的主键的值
-	 * @param conn
-	 * @param sql
-	 * @param params
-	 * @return long类型的主键
-	 * @throws SQLException
-	 */
 	public static long executeInsert(Connection conn, String sql, Object... params) throws SQLException {
 		PreparedStatement psInsert = null;
 		PreparedStatement psLastInsertId = null;
@@ -170,7 +163,7 @@ public class JDBCUtils {
 	}
 
 	/**
-	 * 执行插入语句,获得插入的主键的值
+	 * 专门用于执行插入数据的方法，可以获得自增字段的值
 	 * 
 	 * @param sql
 	 * @param params

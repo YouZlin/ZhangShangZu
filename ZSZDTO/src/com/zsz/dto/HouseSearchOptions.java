@@ -7,7 +7,7 @@ public class HouseSearchOptions
 	private Long regionId;//区域，可空
 	private Integer startMonthRent;//起始月租，可空
 	private Integer endMonthRent;//结束月租，可空
-	private OrderByType orderByType = OrderByType.MonthRent_ASC;//排序方式
+	private OrderByType orderByType = OrderByType.MonthRent;//排序方式
 	private String keywords;//搜索关键字，可空
 	private int pageSize;//每页数据条数
 	private long currentIndex;//当前页码
@@ -101,9 +101,8 @@ public class HouseSearchOptions
 	{
 		this.currentIndex = currentIndex;
 	}
-	
+
 	public enum OrderByType {
-		MonthRent_ASC, Area_ASC,
-		MonthRent_DESC, Area_DESC,
+		MonthRent, Area
 	};
 }

@@ -18,26 +18,24 @@ public class EncodingTrimFilter implements Filter {
 
 	@Override
 	public void destroy() {
-
+		
+		
 	}
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response,
-			FilterChain chain) throws IOException, ServletException {
-		//解决编码格式问题
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-//		chain.doFilter(request, response);//一定加上，否则无法继续跳转
-
-		//进行去空格处理
-		TrimHttpRequest trimReq=new TrimHttpRequest((HttpServletRequest)request);
+		
+		TrimHttpRequest trimReq = new TrimHttpRequest((HttpServletRequest)request);
+		//chain.doFilter(request, response);
 		chain.doFilter(trimReq, response);
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		
+				
 	}
 
 }

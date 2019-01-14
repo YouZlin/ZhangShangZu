@@ -3,6 +3,8 @@
 	<name>ZuAdmin</name>
 	<comment></comment>
 	<projects>
+		<project>ZSZDAO</project>
+		<project>ZSZDTO</project>
 		<project>ZSZService</project>
 		<project>ZSZTools</project>
 	</projects>
@@ -45,11 +47,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>ZSZTools</name>
-			<type>2</type>
-			<locationURI>WORKSPACE_LOC/ZSZTools</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

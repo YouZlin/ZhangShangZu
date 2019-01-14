@@ -22,11 +22,6 @@ import com.google.gson.GsonBuilder;
 
 public class CommonUtils {
 	
-	/**
-	 * 计算MD5
-	 * @param s
-	 * @return
-	 */
 	public final static String calcMD5(String s)
 	{
 		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
@@ -57,11 +52,6 @@ public class CommonUtils {
 		}
 	}
 
-	/**
-	 * 计算MD5
-	 * @param inStream
-	 * @return
-	 */
 	public final static String calcMD5(InputStream inStream)
 	{
 		MessageDigest digest = null;
@@ -82,11 +72,6 @@ public class CommonUtils {
 		return bigInt.toString(16);
 	}
 	
-	/**
-	 * 数组转换成List形式
-	 * @param arrays
-	 * @return
-	 */
 	public static List<Object> toList(Object arrays) {
 		if (arrays.getClass().isArray() == false) {
 			throw new IllegalArgumentException("传进来的不是数组");
@@ -102,11 +87,6 @@ public class CommonUtils {
 
 	}
 
-	/**
-	 * 判断是否为空或者是空格
-	 * @param s
-	 * @return
-	 */
 	public static boolean isNullOrWhiteSpace(String s) {
 		if (s == null) {
 			return true;
@@ -114,11 +94,6 @@ public class CommonUtils {
 		return s.trim().length() == 0;// ""/" "
 	}
 
-	/**
-	 * 判断是否是邮箱
-	 * @param email
-	 * @return
-	 */
 	public static boolean isEmail(String email) {
 		if (isNullOrWhiteSpace(email)) {
 			return false;
@@ -128,11 +103,6 @@ public class CommonUtils {
 		return m.matches();
 	}
 
-	/**
-	 * 判断是否是电话
-	 * @param phoneNum
-	 * @return
-	 */
 	public static boolean isPhoneNum(String phoneNum) {
 		if (isNullOrWhiteSpace(phoneNum)) {
 			return false;
@@ -142,12 +112,7 @@ public class CommonUtils {
 		return m.matches();
 	}
 
-	/**
-	 * 字符串年月日的格式化
-	 * @param s
-	 * @return
-	 */
-	public static Date formatDate(String s) {
+	public static Date parseDate(String s) {
 		try {
 			return new SimpleDateFormat("yyyy-MM-dd").parse(s);
 		} catch (ParseException e) {
@@ -155,11 +120,6 @@ public class CommonUtils {
 		}
 	}
 
-	/**
-	 * URL的UTF-8的格式化
-	 * @param str
-	 * @return
-	 */
 	public static String urlEncodeUTF8(String str) {
 		try {
 			return URLEncoder.encode(str, "UTF-8");
@@ -168,21 +128,12 @@ public class CommonUtils {
 		}
 	}
 	
-	/**
-	 * yyyy-MM-dd HH:mm:ss时间格式化的Gson
-	 * @return
-	 */
 	public static Gson createGson()
 	{
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 		return gson;
 	}
 	
-	/**
-	 * 字符串格式数组转换成长整形数组
-	 * @param strs
-	 * @return
-	 */
 	public static long[] toLongArray(String[] strs)
 	{
 		if(strs==null)

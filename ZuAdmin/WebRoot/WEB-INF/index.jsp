@@ -1,17 +1,11 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<%-- 使用该方法需要移除头部的path和basePath的定义 --%>
-	<%-- <%@include file="/WEB-INF/header.jsp" %> --%>
-	<%-- 使用该方法可以使用file内部定义的变量 --%>
-	
-	<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<%@include file="/WEB-INF/header.jsp" %>
+
 <title>H-ui.admin v2.3</title>
 <meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
@@ -31,12 +25,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</ul>
 	</nav>
 	<ul class="Hui-userbar">
-		<li>超级管理员</li>
-		<li class="dropDown dropDown_hover"><a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+		<li>${adminUser.phoneNum }(
+		<c:if test="${empty adminUser.cityName}">
+		总部
+		</c:if>
+		<c:if test="${not empty adminUser.cityName}">
+		${adminUser.cityName }
+		</c:if>
+		
+		)</li>
+		<li class="dropDown dropDown_hover"><a href="#" class="dropDown_A">${adminUser.name } <i class="Hui-iconfont">&#xe6d5;</i></a>
 			<ul class="dropDown-menu radius box-shadow">
-				<li><a href="#">个人信息</a></li>
-				<li><a href="#">切换账户</a></li>
-				<li><a href="#">退出</a></li>
+				<li><a href="<%=ctxPath%>/Index?action=logout">退出</a></li>
 			</ul>
 		</li>
 		<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -56,18 +56,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<input runat="server" id="divScrollValue" type="hidden" value="" />
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 权限管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="article-list.html" href="javascript:void(0)">资讯管理</a></li>
+					<li><a _href="<%=ctxPath %>/Role?action=list" href="javascript:void(0)">角色管理</a></li>
+					<li><a _href="<%=ctxPath %>/AdminUser?action=list" href="javascript:void(0)">管理员管理</a></li>
 				</ul>
 			</dd>
 		</dl>
 		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i> 房源管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="picture-list.html" href="javascript:void(0)">图片管理</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=list&typeId=11&pageIndex=1" href="javascript:void(0)">短租管理</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=list&typeId=12&pageIndex=1" href="javascript:void(0)">写字楼管理</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=list&typeId=13&pageIndex=1" href="javascript:void(0)">合租管理</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=list&typeId=14&pageIndex=1" href="javascript:void(0)">整租管理</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=appList&pageNum=1&status=新建" href="javascript:void(0)">待处理看房订单</a></li>
+					<li><a _href="<%=ctxPath %>/House?action=appList&pageNum=1&status=在跟进" href="javascript:void(0)">在跟进看房订单</a></li>
 				</ul>
 			</dd>
 		</dl>

@@ -48,12 +48,11 @@ public class AjaxResult {
 		this.data = data;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return CommonUtils.createGson().toJson(this);
 	}
-
+	
 	public String toJson()
 	{
 		return this.toString();

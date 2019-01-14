@@ -313,7 +313,7 @@ $(function(){
 	/*搜索框*/
 	$.Huifocusblur('.searchTxt');
 	$.Huihover('.ac_results li');
-	$(".ac_results li").click(function(event){
+	$(".ac_results li").click(function (event){
 		$(".searchTxt").addClass("focus").val($(this).find("p").text());
 		$(".ac_results").hide();
 		//$(".form-search").submit();/*提交表单*/
