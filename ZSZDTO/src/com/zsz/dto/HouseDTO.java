@@ -5,22 +5,22 @@ import java.util.Date;
 public class HouseDTO
 {
 	private long id;
-	private long cityId;// ����id
+	private long cityId;// 城市id
 	private String cityName;
-	private long regionId;// ����id
-	private String regionName;// ��������
-	private long communityId;// С��id
-	private String communityName;// С������
-	private String communityLocation;// С��λ��
-	private String communityTraffic;// С����ͨ
-	private Integer communityBuiltYear;// С���������
+	private long regionId;// 区域id
+	private String regionName;// 区域名称
+	private long communityId;// 小区id
+	private String communityName;// 小区名称
+	private String communityLocation;// 小区位置
+	private String communityTraffic;// 小区交通
+	private Integer communityBuiltYear;// 小区建造年份
 
-	private long roomTypeId;// ���ݻ���id������һ����
-	private String roomTypeName;// ���ݻ�������
-	private String address;// ��ַ
-	private int monthRent;// �����
-	private long statusId;// ״̬�������У��Ѿ������
-	private String statusName;// ״̬����
+	private long roomTypeId;// 房间类型id
+	private String roomTypeName;// 房间类型名称
+	private String address;// 地址
+	private int monthRent;// 月租
+	private long statusId;//̬ 现状id
+	private String statusName;//现状名称
 	private double area;// ���
 	private long decorateStatusId;// װ��״̬����װ����װ
 	private String decorateStatusName;// װ��״̬����

@@ -2,6 +2,18 @@
     <wb-module deploy-name="ZuFront">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="ZSZService.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ZSZService/ZSZService">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ZSZDTO.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ZSZDTO/ZSZDTO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ZSZDAO.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ZSZDAO/ZSZDAO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ZSZTools.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ZSZTools/ZSZTools">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="ZuFront"/>
         <property name="java-output-path" value="/ZuFront/build/classes"/>
     </wb-module>
